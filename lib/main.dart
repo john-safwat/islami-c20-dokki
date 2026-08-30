@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c20_dokki/app_colors.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,6 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var colors = AppColors();
     return MaterialApp();
   }
 }
