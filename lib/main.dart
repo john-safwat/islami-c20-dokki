@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c20_dokki/app_screens.dart';
 import 'package:islami_c20_dokki/app_text.dart';
 import 'package:islami_c20_dokki/app_colors.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     var text = AppText();
 
 
-
+    var screens = AppScreens();
     return MaterialApp();
   }
 }
