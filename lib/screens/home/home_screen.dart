@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c20_dokki/screens/home/tabs/quran/quran_tab.dart';
 import 'package:islami_c20_dokki/screens/home/widgets/base_tab.dart';
 import 'package:islami_c20_dokki/screens/home/widgets/base_tab.dart';
 import 'package:islami_c20_dokki/screens/home/widgets/base_tab.dart';
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
 
   List<Widget> tabs= [
-    BaseTab(image: "assets/images/quran_bg.png", child: Container(color: Colors.red,)),
+    BaseTab(image: "assets/images/quran_bg.png", child: QuranTab()),
     BaseTab(image: "assets/images/hadith_bg.png", child: Container(color: Colors.blue,)),
     BaseTab(image: "assets/images/sebha_bg.png", child: Container(color: Colors.green,)),
     BaseTab(image: "assets/images/radio_bg.png", child: Container(color: Colors.purple,)),
