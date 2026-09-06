@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:islami_c20_dokki/models/sura.dart';
 import 'package:islami_c20_dokki/screens/home/home_screen.dart';
+import 'package:islami_c20_dokki/screens/sura_details/sura_details.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +30,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {HomeScreen.routeName: (_) => HomeScreen()},
+      routes: {
+        HomeScreen.routeName: (_) => HomeScreen(),
+        SuraDetails.routeName: (context){
+          var sura = ModalRoute.of(context)?.settings.arguments as Sura;
+          return SuraDetails(sura: sura);
+        }
+      },
       initialRoute: HomeScreen.routeName,
     );
   }
