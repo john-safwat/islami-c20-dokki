@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:islami_c20_dokki/models/hadeth.dart';
 import 'package:islami_c20_dokki/models/sura.dart';
+import 'package:islami_c20_dokki/screens/hadeth_details/hadeth_details.dart';
 import 'package:islami_c20_dokki/screens/home/home_screen.dart';
 import 'package:islami_c20_dokki/screens/sura_details/sura_details.dart';
 
@@ -35,6 +37,10 @@ class _MyAppState extends State<MyApp> {
         SuraDetails.routeName: (context){
           var sura = ModalRoute.of(context)?.settings.arguments as Sura;
           return SuraDetails(sura: sura);
+        },
+        HadethDetails.routeName: (context){
+          var hadeth = ModalRoute.of(context)?.settings.arguments as Hadeth;
+          return HadethDetails(hadeth: hadeth);
         }
       },
       initialRoute: HomeScreen.routeName,
