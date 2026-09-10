@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c20_dokki/models/sura.dart';
+import 'package:islami_c20_dokki/screens/home/tabs/quran/quran_tab.dart';
 import 'package:islami_c20_dokki/screens/sura_details/sura_details.dart';
 import 'package:islami_c20_dokki/theme/app_colors.dart';
 import 'package:islami_c20_dokki/theme/text_styles.dart';
 
 class SuraWidget extends StatelessWidget {
   final Sura sura;
+  final SuraWidgetOnClickCallBack callBack;
 
-  const SuraWidget({required this.sura, super.key});
+  const SuraWidget({required this.sura, required this.callBack, super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.pushNamed(context, SuraDetails.routeName , arguments: sura);
+      onTap: () {
+        callBack(sura);
       },
       child: Row(
         spacing: 16,
@@ -37,12 +39,15 @@ class SuraWidget extends StatelessWidget {
               crossAxisAlignment: .start,
               spacing: 8,
               children: [
-                Text(sura.nameEn, style: titleLarge(color: AppColors.white),),
-                Text(sura.versesNumber, style: titleMedium(color: AppColors.white),),
+                Text(sura.nameEn, style: titleLarge(color: AppColors.white)),
+                Text(
+                  sura.versesNumber,
+                  style: titleMedium(color: AppColors.white),
+                ),
               ],
             ),
           ),
-          Text(sura.nameAr, style: titleLarge(color: AppColors.white),),
+          Text(sura.nameAr, style: titleLarge(color: AppColors.white)),
         ],
       ),
     );
